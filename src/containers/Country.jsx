@@ -3,13 +3,12 @@ import { useGetDataID } from '../hooks/useDataID';
 import { UsePaises } from '../hooks/usePaises';
 
 const Countrie =(prop)=>{
-    console.log(prop)
     const name = prop.location.pathname.split('/');
     const data = useGetDataID({name:name[2]});
 
-    const info = UsePaises();
+    const info = UsePaises({name:name[2]});
 
-   
+   console.log(info)
     return(
 
         <>
@@ -38,6 +37,23 @@ const Countrie =(prop)=>{
                 :
                 <>
                     <h1>Cargando</h1>
+                </>
+            }
+            {
+                info
+                ?
+                <>
+                    {
+                        info.map((data , i)=>(
+                            < div key={i}>
+                                    <h1>{data.capital}</h1>
+                                    <img src={data.flag} alt='Bandera'></img>
+                            </div>
+                        ))
+                    }
+                </>
+                :
+                <>
                 </>
             }
         </>

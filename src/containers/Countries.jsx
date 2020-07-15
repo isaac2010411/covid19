@@ -5,7 +5,6 @@ import { useGetData } from '../hooks/useData';
 
 const Countries =()=>{
     const countries = useGetData();
-    console.log(countries)
     return( 
         <>
             {
