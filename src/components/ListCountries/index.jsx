@@ -12,12 +12,13 @@ const CustomSection = styled.section`
     margin:5px;
     padding:5px;
     align-items:center;
-
 `
 
 
 
 const ListCountries =({countries}) =>{
+
+    console.log(countries)
     return(
         <React.Fragment>
             <h1 style={{textAlign:'center'}}>Paises</h1>
@@ -27,7 +28,7 @@ const ListCountries =({countries}) =>{
                 {
                     countries.map(((country,i)=>(
                         <CustomSection key={i} >
-                            <Link to={`paises/${country.name}`}style={{fontSize:'1.4rem',textDecoration:'none'}} >{country.name}</Link>
+                            <Link to={`paises/${country.alpha2code}`}style={{fontSize:'1.4rem',textDecoration:'none'}} >{country.name}</Link>
                         </CustomSection>
                     )))
                 }

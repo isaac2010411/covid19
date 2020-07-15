@@ -10,7 +10,7 @@ const Countries =()=>{
             {
                 countries
                 ?
-                    <ListCountries countries={ countries }></ListCountries>
+                    <ListCountries countries={ countries } ></ListCountries>
                 :
                 <>
                 cargando

@@ -1,14 +1,16 @@
 import React from 'react';
 import { useGetDataID } from '../hooks/useDataID';
 import { UsePaises } from '../hooks/usePaises';
+import MapaPresentation from '../components/Map';
 
 const Countrie =(prop)=>{
     const name = prop.location.pathname.split('/');
+    console.log(name)
     const data = useGetDataID({name:name[2]});
 
     const info = UsePaises({name:name[2]});
+    console.log(info)
 
-   console.log(info)
     return(
 
         <>
@@ -19,8 +21,7 @@ const Countrie =(prop)=>{
                     {
                         data.map((mapDate , i) => (
                             <div key={i}>
-                                <h1>{ 'Latitud  :' + mapDate.latitude}</h1>
-                                <h1>{ 'Longitud  :' + mapDate.longitude}</h1>
+                                <MapaPresentation latitud={mapDate.latitude} longitud={mapDate.longitude}></MapaPresentation>
                                 <h1>{ 'Pais  :' + mapDate.country}</h1>
                                 <h1>{ 'Confirmados :' + mapDate.confirmed}</h1>
                                 <h1>{ 'Muertos :' + mapDate.deaths}</h1>
@@ -44,12 +45,12 @@ const Countrie =(prop)=>{
                 ?
                 <>
                     {
-                        info.map((data , i)=>(
-                            < div key={i}>
-                                    <h1>{data.capital}</h1>
-                                    <img src={data.flag} alt='Bandera'></img>
-                            </div>
-                        ))
+                    < div >
+                            <h1>{info.capital}</h1>
+                            <img src={info.flag} alt='Bandera'></img>
+                    </div>
+
+                     
                     }
                 </>
                 :

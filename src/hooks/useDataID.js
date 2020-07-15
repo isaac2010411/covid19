@@ -1,4 +1,5 @@
 import {useState , useEffect } from 'react';
+import config from '../config';
 var unirest = require('unirest')
 
 
@@ -9,12 +10,12 @@ export const useGetDataID =( { name } )=>{
         let isMounted = true;
         async function getData(name){
     
-            var req = unirest("GET", `https://covid-19-data.p.rapidapi.com/country?name=${ name }&Format=json`);
+            var req = unirest("GET", `https://covid-19-data.p.rapidapi.com/country/code?code=${name}&Format=json`);
 
             req.headers({
-                "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-                "x-rapidapi-key": "d9740b60ebmshc60a112f10d9441p14501bjsn3e0facebbf9a",
-                "useQueryString": true
+                "x-rapidapi-host": config.rapidapiHost,
+                "x-rapidapi-key": config.rapidapiKey,
+                "useQueryString": config.queryString
             })
 
             .then(data=>setData(data.body))

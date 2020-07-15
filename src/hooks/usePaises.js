@@ -10,7 +10,7 @@ export const UsePaises =({name})=>{
 
     useEffect(()=>{
         async function getPaises (name){
-                fetch(`https://restcountries.eu/rest/v2/name/${name}`,{
+                fetch(`https://restcountries.eu/rest/v2/alpha/${name}`,{
                     method:'GET'
                 })
                 .then(data=>data.json())

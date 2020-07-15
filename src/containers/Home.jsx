@@ -3,7 +3,6 @@ import  { UseTotal }  from '../hooks/useTotal';
 import styled from 'styled-components';
 
 
-
 const CustomContainer = styled.div`
     height:73vh;
     margin:0px 5px 0px 5px;
@@ -68,7 +67,6 @@ const Home =()=>{
                     }
                     </React.Fragment>
             }
-            
         </React.Fragment>
     )
 }
