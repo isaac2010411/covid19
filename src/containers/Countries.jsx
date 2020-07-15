@@ -1,20 +1,21 @@
 import React from 'react';
 import ListCountries from '../components/ListCountries';
-import { useGetData } from '../hooks/useData';
+import { UseCountries } from '../hooks/useCountries';
+import IsLoading from '../components/IsLoading';
 
 
 const Countries =()=>{
-    const countries = useGetData();
+
+    const countries = UseCountries();
+    
     return( 
         <>
             {
                 countries
                 ?
-                    <ListCountries countries={ countries } ></ListCountries>
+                    <ListCountries countries={countries} ></ListCountries>
                 :
-                <>
-                cargando
-                </>
+               <IsLoading></IsLoading>
             }
         </>
     )

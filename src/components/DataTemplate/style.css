@@ -1,0 +1,13 @@
+.datatemplate_col{
+    height:7rem;
+    width:'50%';
+    display:flex;
+    flex-direction:column;
+    padding:5px;
+    border-radius:10px;
+    margin:4px;
+}
+.datatemplate_col > h5 {
+    margin-top: 7px;
+    text-align: center;
+}

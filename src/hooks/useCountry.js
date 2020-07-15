@@ -3,22 +3,27 @@ import {useState , useEffect } from 'react';
 
 
 
-export const UsePaises =({name})=>{
-    
+
+export const UseCountry =({code})=>{
 
     const [ info , setInfo ] = useState(null);
 
     useEffect(()=>{
-        async function getPaises (name){
-                fetch(`https://restcountries.eu/rest/v2/alpha/${name}`,{
+        let isMounted = true;
+        async function getCountries (){
+                fetch(`https://restcountries.eu/rest/v2/alpha/${code}`,{
                     method:'GET'
                 })
                 .then(data=>data.json())
                 .catch(error=>error)
                 .then(data=> setInfo(data))
         }
-        getPaises(name);
-    },[name])
+        if(isMounted){
+            getCountries(code);
+        }
+        
+        return(()=> isMounted=false )
+    },[code])
 
     return info;
 
