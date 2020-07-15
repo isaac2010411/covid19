@@ -23,9 +23,9 @@ const Curiosities =({code})=>{
                     info
                     ?
                     <>
-                       <p>{`${info.name} tiene ${info.languages.length} lenguajes oficiales ${info.languages.map((lenguaje)=>`${lenguaje.name}`)} , su capital es ${info.capital}, abarca un area de ${info.area} km2 , La moneda que se utiliza es el ${info.currencies.map(currency=>`${currency.name}`)}`}</p>
+                       <p>{`${info.name} tiene como lenguaje oficial el ${info.languages.map((lenguaje)=>`${lenguaje.name}`)} , su capital es ${info.capital}, abarca un area de ${info.area} km2 , La moneda que se utiliza es el ${info.currencies.map(currency=>`${currency.name}`)}`}</p>
                        <h2>Su bandera</h2>
-                       <img src={info.flag} className='img-fluid'></img>
+                       <img src={info.flag} alt={'Bandera'} className='img-fluid'></img>
                     </>
                     :
                     <IsLoading></IsLoading>
