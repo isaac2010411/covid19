@@ -8,7 +8,6 @@ import IsLoading from '../IsLoading';
 
 const Curiosities =({code})=>{
     const info = UseCountry({code:code[2]});
-    console.log(info)
     const handleChange =()=>{
         var element = document.getElementById("also_data");
         element.classList.toggle('d-none');
