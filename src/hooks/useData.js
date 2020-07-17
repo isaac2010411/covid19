@@ -8,11 +8,11 @@ export const useGetData =()=>{
     useEffect(()=>{
         let isMounted = true;
         async function getData(){
-            var req = unirest("GET", `${process.env.REACT_APP_HOST_COV}help/countries`);
+            var req = unirest("GET", `https://covid-19-data.p.rapidapi.com/help/countries`);
 
             req.headers({
-                "x-rapidapi-host": process.env.REACT_APP_RAPIDAPI_HOST,
-                "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_KEY ,
+                "x-rapidapi-host": 'covid-19-data.p.rapidapi.com',
+                "x-rapidapi-key": 'd9740b60ebmshc60a112f10d9441p14501bjsn3e0facebbf9a' ,
                 "useQueryString": true,
             })
 
