@@ -6,7 +6,7 @@ import IsLoading from '../components/IsLoading';
 const Country =(prop)=>{
 
     const code = prop.location.pathname.split('/');
-    const data = useGetDataID({name:code[2]});
+    const data = useGetDataID({name:code[code.length-1]});
     
     return(
         <>
