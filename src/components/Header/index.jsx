@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import covidImg from '../../icons/covid.ico';
 import NavBar from '../NavBar';
- 
+import './style.css';
 const CustomHeader = styled.header`
     padding:5px;
     height:7rem;
@@ -24,7 +23,9 @@ const Header =()=>{
         <CustomHeader>
             <CustomContainer>
                 <h1>Covid-19</h1>
-                <img src={covidImg}  alt='covidimage'></img>
+                <div className='header_img_container'>
+                    <div className='header_img-img'></div>
+                </div>
             </CustomContainer>
             <NavBar/>
         </CustomHeader>

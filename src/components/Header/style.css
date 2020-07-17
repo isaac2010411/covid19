@@ -1,0 +1,18 @@
+.header_img_container{
+    height: 80px;
+    width: 80px;
+    margin-top: -19px;
+    margin-left: -7px;
+    transform: scale(0.3,0.3);
+}
+.header_img-img{
+    background-image: url('../../icons/covid.ico');
+    height: 123px;
+    width: 123px;
+    animation: spin 2s linear infinite;
+      
+} 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

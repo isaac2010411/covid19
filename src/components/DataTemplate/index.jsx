@@ -3,9 +3,13 @@ import { Col , Container , Row } from 'react-bootstrap'
 import './style.css';
 
 
-const DataTemplate =({data})=>{
+const DataTemplate =({data , title})=>{
     return(
-        <Container fluid style={{marginTop:'20px'}}>
+        <Container fluid style={{marginTop:'30px'}}>
+            {
+                title &&
+                <h4>{title}</h4>
+            }
             <Row>
                 <Col className='datatemplate_col' style={{backgroundColor:'yellow'}}>
                     <h5>Confirmados</h5>

@@ -1,36 +1,54 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { UseCountry } from '../../hooks/useCountry';
+
 import IsLoading from '../IsLoading';
+import MapCountry from '../MapCountry';
 
 
 
 
-const Curiosities =({code})=>{
+const Curiosities =({code , latitud , longitud })=>{
     const info = UseCountry({code:code[2]});
-    const handleChange =()=>{
-        var element = document.getElementById("also_data");
-        element.classList.toggle('d-none');
-   }
     return(
-        <Container style={{marginTop:'20px'}}>
-            <Row onClick={()=>handleChange()}>
-                <h2 style={{marginLeft:'10%'}}>Sabias que..</h2>
-            </Row>
-            <Container id='also_data' className='d-none'>
-                {
-                    info
-                    ?
-                    <>
-                       <p>{`${info.name} tiene como lenguaje oficial el ${info.languages.map((lenguaje)=>`${lenguaje.name}`)} , su capital es ${info.capital}, abarca un area de ${info.area} km2 , La moneda que se utiliza es el ${info.currencies.map(currency=>`${currency.name}`)}`}</p>
-                       <h2>Su bandera</h2>
-                       <img src={info.flag} alt={'Bandera'} className='img-fluid'></img>
-                    </>
-                    :
-                    <IsLoading></IsLoading>
-                }
-            </Container>
+        <Container fluid>
+            {
+                info
+                ?
+                <React.Fragment>
+                    <Row className='d-flex'>
+                        <Col md={6} style={{display:'flex',alignItems:'center',justifyContent:'center'}} >
+                            <p>
+                                {
+                                    `${info.name} tiene como lenguaje oficial el 
+                                    ${info.languages.map((lenguaje)=>`${lenguaje.name}`)} , 
+                                    su capital es ${info.capital}, abarca una superficie total de 
+                                    ${info.area} km2 , La moneda que se utiliza es el ${info.currencies.map(currency=>`${currency.name}`)}`
+                                }
+                            </p>
+                    
+                        </Col>
+                        <Col md={6} style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+                            <h5>Bandera</h5>
+                            <img src={info.flag} alt={'Bandera'} style={{maxHeight:'200px'}} className='img-fluid'></img>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop:'30px', marginBottom:'30px', display:'block'}}>
+                        <Col>
+                                <h4>Ubicacion geografica</h4>
+                        </Col>
+                        <Col>
+                            <MapCountry latitud={latitud} longitud={longitud}></MapCountry>
+                        </Col>
+                        
+                    </Row>
+                    
+                </React.Fragment> 
+                :
+                <IsLoading/>
+            }
         </Container>
+
     )
 };
 

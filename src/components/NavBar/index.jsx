@@ -1,9 +1,7 @@
-import React from 'react';
+import React  from 'react';
 
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-
 
 const CustomHeader = styled.nav`
     display:flex;
@@ -24,6 +22,7 @@ const CustomHeader = styled.nav`
 `
 
 const NavBar =()=>{
+    
     return(
         <CustomHeader>
             <div>
@@ -31,9 +30,10 @@ const NavBar =()=>{
                     Home
                 </Link>
             </div>
-            <div><Link to='/paises'>
+            <div>
+                <Link to='/paises'>
                 Paises
-            </Link>
+                </Link>
             </div>
         </CustomHeader>
     )

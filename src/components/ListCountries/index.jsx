@@ -1,38 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+
+import './style.css';
 
 
 const ListCountries =({countries}) =>{
 
     return(
-        <React.Fragment>
-            <h4 style={{textAlign:'center'}}>Paises</h4>
+        <React.Fragment>  
         {
             countries &&
-            <>
-                {
-                    countries.map(((country,i)=>(
-                        <Link to={`paises/${country.alpha3Code}`} key={i}>
-                                <ListCountriesWhiteFlag name={country.name} flag={country.flag}/>
-                        </Link>
-                    )))
-                }
-            </>
+            <div style={{marginTop:'20px'}}>
+             <h4 style={{textAlign:'center'}}>Total de paises</h4>
+                <div className='listcountries_container-grid'>
+                    {
+                        countries.map(((country,i)=>(
+                            <Link to={`paises/${country.alpha3Code}`} key={i} className='listcountries_item-grid'>
+                                <img src={country.flag} height='auto'width='100px' alt={country.name}/>
+                                <h6 >{country.name}</h6>
+                            </Link>
+                        )))
+                    }
+                </div>
+            </div>
         }
         </React.Fragment>
     )
 };
 
-
-const ListCountriesWhiteFlag = ({name , flag})=>(
-    <Container style={{height:'4rem', margin:'5px' , padding:'3px'}}>
-        <div style={{marginLeft:'10%', display:'flex' , alignItems:'center'}}>
-            <img src={flag} height='28px' width='28px'  alt={name}/>
-            <h6 style={{marginTop:'5px',marginLeft:'10px'}}>{name}</h6>
-        </div>
-        
-    </Container>
-)
 
 export default ListCountries;

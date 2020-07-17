@@ -13,13 +13,14 @@ const Countries =()=>{
             {
                 countries
                 ?
-                    <ListCountries countries={countries} ></ListCountries>
+                    <ListCountries 
+                        countries={countries} 
+                    />
                 :
                <IsLoading></IsLoading>
             }
         </>
     )
 }
-
 
 export default Countries;
