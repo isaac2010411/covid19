@@ -1,21 +1,20 @@
 .listcountries_container-grid{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto ;
     row-gap: 10px;
     column-gap: 10px;
     padding: 5px;
 }
 .listcountries_item-grid{
+    display: flex;
+    float: left;
     font-size: 30px;
     text-align: center;
+    margin-left: 50px;
+    
 }
-
-@media (min-width: 300px) {
-    .listcountries_container-grid{
-      display: grid;
-      grid-template-columns: auto auto;
-      padding: 5px; 
-  }
+.listcountries_item-grid>h6{
+  margin-top: 20px;
 }
 
 
