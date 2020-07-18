@@ -22,7 +22,7 @@ const Home =()=>{
                     <Tips></Tips>
                 {
                     data.map((info , i )=>(
-                        <DataTemplate data={info} title='Casos en el mundo' key={i}/>
+                        <DataTemplate data={info} title='Cases in the world' key={i}/>
                     ))
                 }
                 </React.Fragment>

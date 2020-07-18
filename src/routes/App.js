@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import Home from '../containers/Home';
 import Country from '../containers/Country';
 import Countries from '../containers/Countries';
+import NotFoundPage from '../containers/NotFoundPage'
 
 const App =()=> {
     return(
@@ -14,8 +15,9 @@ const App =()=> {
             <Layout>
                 <Switch>
                     <Route exact path='/' component={Home}></Route>
-                    <Route exact path='/paises' component={ Countries }></Route>
-                    <Route exact path='/paises/:id' component={Country}></Route>
+                    <Route exact path='/countries' component={ Countries }></Route>
+                    <Route exact path='/countries/:id' component={Country}></Route>
+                    <Route path="*" component={NotFoundPage} />
                 </Switch>
             </Layout>
         </BrowserRouter>

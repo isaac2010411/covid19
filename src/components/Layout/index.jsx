@@ -7,6 +7,7 @@ const Layout = ({children})=>{
     return(
         <Fragment>
             <Header/>
+                <hr style={{margin:'15px'}}/>
             {children}
             <Footer/>
         </Fragment>

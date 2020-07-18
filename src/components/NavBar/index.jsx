@@ -31,8 +31,8 @@ const NavBar =()=>{
                 </Link>
             </div>
             <div>
-                <Link to='/paises'>
-                Paises
+                <Link to='/countries'>
+                    Countries
                 </Link>
             </div>
         </CustomHeader>

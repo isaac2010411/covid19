@@ -4,7 +4,7 @@ import NavBar from '../NavBar';
 import './style.css';
 const CustomHeader = styled.header`
     padding:5px;
-    height:7rem;
+    height:8rem;
     img{
         height:40px;
         width:40px;

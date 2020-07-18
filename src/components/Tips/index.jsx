@@ -14,31 +14,31 @@ const Tips=()=>{
     const tipList=[
         {
             id:1,
-            tip:'Quedate en casa lo máximo posible',
+            tip:'Stay home',
             image:covidCasa
         },
         {
             id:2,
-            tip:'Manten distancia social',
+            tip:'Maintain at least 1 metre distance between yourself and others.',
             image:covidDistancia
         },
         {
             id:3,
-            tip:'Lavate las manos con frecuencia',
+            tip:'Clean your hands them with soap and water.',
             image:covidLavaManos
         },
         {
             id:4,
-            tip:'No tosas sobre tu mano',
+            tip:'Avoid touching eyes, nose and mouth.',
             image:covidTos
         },
         {
             id:5,
-            tip: 'Sintomas',
+            tip: 'Maintain self-isolate even with minor symptoms such as cough, headache, mild fever,',
             image:covidSintomas
         },
     ]
-    const tip = Math.random()*4;
+    const tip = Math.random()*5;
     return(
         <section style={styleSection}>
             <Jumbotron style={{width:'96%' ,display:'flex', justifyContent:'center'}}>

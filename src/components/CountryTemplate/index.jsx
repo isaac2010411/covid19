@@ -11,9 +11,9 @@ const CountryTemplate =({ data , code})=>{
         {
             data.map((mapDate , i) => (
                 <Container fluid key={i} style={{marginTop:'35px'}}>
-                    <h4 style={{textAlign:'center' ,marginBottom:'15px'}}>{ mapDate.country}</h4>
+                    <h4 style={{textAlign:'center' ,marginBottom:'25px'}}>{ mapDate.country}</h4>
+                        <DataTemplate data= { mapDate } title ={`Cases today`}/>
                         <Curiosities code={code} longitud={mapDate.longitude} latitud={mapDate.latitude}/>
-                        <DataTemplate data= { mapDate } title ={`Casos confirmados en ${mapDate.country}`}/>
                 </Container>
             ))
         }
