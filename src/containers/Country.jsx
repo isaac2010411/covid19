@@ -7,6 +7,7 @@ const Country =(prop)=>{
 
     const code = prop.location.pathname.split('/');
     const data = useGetDataID({name:code[code.length-1]});
+   
     
     return(
         <>
