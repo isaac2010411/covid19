@@ -9,6 +9,10 @@ export const UseTotal =()=>{
         let isMounted = true;
         async function getData(){
             var req = unirest("GET", `https://covid-19-data.p.rapidapi.com/totals`);
+
+            req.query({
+                "format": "json",
+            });
         
             req.headers({
                 "x-rapidapi-host": 'covid-19-data.p.rapidapi.com',

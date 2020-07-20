@@ -4,9 +4,16 @@ import './style.css';
 
 
 const DataTemplate =({data , title})=>{
-    
+   let isActive ={}
+   if( data.critical >=0 ){
+      isActive = data.critical
+   }else{
+    isActive = data.active
+   }
+   console.log(isActive)
+     
     return(
-        <Container fluid style={{marginTop:'70px', marginBottom:'50px'}}>
+        <Container fluid style={{marginTop:'50px', marginBottom:'50px'}}>
             {
                 title &&
                 <h4>{title}</h4>
@@ -22,11 +29,11 @@ const DataTemplate =({data , title})=>{
                 </Col>
             </Row>
             <Row>
-                <Col className='datatemplate_col'style={{backgroundColor:'#FFB32E '}}>
+                <Col className='datatemplate_col'style={{backgroundColor:'#FFB32E'}}>
                     <h5>Critical</h5>
-                    <h5>{new Intl.NumberFormat().format(data.critical)}</h5>
+                    <h5>{new Intl.NumberFormat().format(isActive)}</h5>
                 </Col>
-                <Col className='datatemplate_col'style={{backgroundColor:'#FF735F '}}>
+                <Col className='datatemplate_col'style={{backgroundColor:'#FF735F'}}>
                     <h5>Deaths</h5>
                     <h5>{new Intl.NumberFormat().format(data.deaths)}</h5>
                 </Col>

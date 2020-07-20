@@ -21,7 +21,7 @@
 @media (min-width: 600px) {
     .listcountries_container-grid{
       display: grid;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: auto auto;
       padding: 5px;
       
       
@@ -31,7 +31,7 @@
 @media (min-width: 900px) {
     .listcountries_container-grid{
       display: grid;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto ;
       padding: 5px;
       
       
@@ -41,7 +41,7 @@
 @media (min-width: 1200px) {
     .listcountries_container-grid{
       display: grid;
-      grid-template-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto ;
       padding: 5px;
       
       

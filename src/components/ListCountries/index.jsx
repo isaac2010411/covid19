@@ -5,7 +5,6 @@ import { Row, Col, Container } from 'react-bootstrap';
 
 
 const ListCountries =({countries , wonted}) =>{
-    console.log(countries )
     return(
         <section>  
         {
@@ -26,11 +25,13 @@ const ListCountries =({countries , wonted}) =>{
                 :
                 <div style={{marginTop:'20px'}}>
                     <h5 style={{textAlign:'center'}}>Countries list afected</h5>
+                    <div className='listcountries_container-grid'>
                         {
                             countries.map(((country,i)=>(
                               <ListItem item = {country} key={i}/>
                             )))
                         }
+                    </div>
                 </div>
         
         }

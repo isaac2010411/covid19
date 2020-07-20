@@ -38,10 +38,10 @@ const Tips=()=>{
             image:covidSintomas
         },
     ]
-    const tip = Math.random()*5;
+    const tip = Math.random()*4;
     return(
         <section style={styleSection}>
-            <Jumbotron style={{width:'96%' ,display:'flex', justifyContent:'center'}}>
+            <Jumbotron style={{width:'96%' ,display:'flex', justifyContent:'center',backgroundColor:'#F4F2EF'}}>
             {
                 <Row style={{display:'flex' ,alignItems:'center'}}>
                     <Col>
